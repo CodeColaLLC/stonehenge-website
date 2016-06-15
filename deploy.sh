@@ -40,7 +40,7 @@ fi
 echo "**********************************************Committing and pushing changes made to clone of target branch ${TARGET_BRANCH}"
 git add .
 git commit -m "Automatically deploying build from working directory. Latest commit: ${SHA}"
-git push
+git push origin $TARGET_BRANCH
 
 # Cleaning up
 echo "**********************************************Deleting temporary clone of target branch ${TARGET_BRANCH}"
