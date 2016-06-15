@@ -73,13 +73,13 @@ function send_email ($input, $error = null) {
 	global $config;
 
 	if ($error === null) {
-		$subject = 'Automatic WordPress deploy complete';
+		$subject = 'Automatic deploy complete';
 		$message = 'The repository ' . $input->repository->name . ' was successfully redeployed automatically from the ' .
 			$config->branch . ' branch by ' . $input->pusher->name . '. Visit the website for ' . $input->repository->name . ' to ' .
 			'confirm that everything is working!';
 	} else {
-		$subject = 'Automatic WordPress deploy FAILED';
-		$message = 'The automatic WordPress deploy script failed for the ' . $input->repository->name . ' repository ' .
+		$subject = 'Automatic deploy FAILED';
+		$message = 'The automatic deploy script failed for the ' . $input->repository->name . ' repository ' .
 			'because the git pull command did not exit with a 0 status code. The output was:' . "\n" . print_r($error, true);
 	}
 

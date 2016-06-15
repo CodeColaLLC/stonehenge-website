@@ -27,6 +27,7 @@ npm run build
 # Copy the build contents to the repo
 echo "------------------------ Copying build files from ${SOURCE_DIR} into clone of target branch ${TARGET_BRANCH}"
 cp -R $SOURCE_DIR/* ./out
+cp ./deploy.php ./out
 
 cd ./out
 
