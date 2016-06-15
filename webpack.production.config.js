@@ -7,8 +7,8 @@ module.exports = {
 		'./lib/index.js'
 	],
 	output: {
-		path: path.join(__dirname, 'public', 'build'),
-		filename: 'bundle.js'
+		path: path.join(__dirname, 'public'),
+		filename: 'build/bundle.js'
 	},
 	resolve: {
 		extensions: ['', '.js']
