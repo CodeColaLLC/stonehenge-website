@@ -1,0 +1,28 @@
+.stonehenge-region {
+	position: relative;
+}
+
+a.stonehenge-edit {
+	font-size: 20px;
+	line-height: 1;
+	cursor: pointer;
+	position: absolute;
+	left: -24px;
+	z-index: 99999;
+	color: rgba(0,0,0,.75);
+	background: #fff;
+	float: left;
+}
+
+a.stonehenge-edit:hover {
+	color: #3d79f2;
+}
+
+.CodeMirror {
+	min-height: 200px;
+	text-align: left;
+}
+
+.redactor-toolbar {
+	text-align: left;
+}
