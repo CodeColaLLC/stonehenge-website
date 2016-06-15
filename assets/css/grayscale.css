@@ -33,16 +33,14 @@ h6 {
 	letter-spacing: 1px;
 }
 
-p,
-.content-section ul li {
+p {
 	margin: 0 0 25px;
 	font-size: 18px;
 	line-height: 1.5;
 }
 
 @media(min-width:768px) {
-	p,
-	.content-section ul li {
+	p {
 		margin: 0 0 35px;
 		font-size: 20px;
 		line-height: 1.6;
@@ -437,10 +435,6 @@ footer p {
 	max-width: 275px;
 }
 
-.content-section ul li {
-	color: #ddd;
-}
-
-.content-section ul li strong {
+.content-section p strong {
 	color: #fff;
 }
