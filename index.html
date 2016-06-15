@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Stonehenge – The content control platform</title>
+		<style>
+			/* FOUC */
+			body { background: #222; }
+			body > * { visibility: hidden; }
+		</style>
+	</head>
+	<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+		<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+						<i class="fa fa-bars"></i>
+					</button>
+					<a class="navbar-brand page-scroll" href="#page-top">
+						Stonehenge <span class="light">Platform</span>
+					</a>
+				</div>
+
+				<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+					<ul class="nav navbar-nav">
+						<li class="hidden"><a href="#page-top"></a></li>
+						<li><a class="page-scroll" href="#about">About</a></li>
+						<li><a class="page-scroll" href="#get-started">Get Started</a></li>
+						<li><a class="page-scroll" href="#features">Features</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<header class="intro">
+			<div class="intro-body">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+							<img src="./logo.png" id="logo">
+							<div region>
+								<h1 class="brand-heading">Stonehenge</h1>
+								<p class="intro-text">A visual, intuitive content <strong>control</strong> system.</p>
+								<a href="#about" class="btn btn-circle page-scroll"><i class="fa fa-angle-double-down animated"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<section id="about" class="container content-section">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2" region>
+					<h2 class="text-center">What is <strong>Stonehenge</strong>?</h2>
+					<p>Stonehenge is an extensible, modular platform that builds websites, intranets, and dashboards. Its
+						intuitive interface makes it trivial to stack different kinds of components together to form beautiful
+						layouts.</p>
+					<p>The focus is on the end experience – simplifying content management. Stonehenge is a framework for
+						assembling many different interlocking components into a unified system. It’s designed from the ground up
+						around consolidating your favorite widgets and applications.</p>
+					<p>Stonehenge is also equipped with a beautiful WYSIWYG editor. See for yourself by clicking the
+						<a><i class="fa fa-pencil-square"></i></a> icon.</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="get-started" class="content-section text-center">
+			<div class="subscribe-section">
+				<div class="container">
+					<div class="col-lg-8 col-lg-offset-2">
+						<h2>Drop Us a Line</h2>
+						<p>Interested in learning more about Stonehenge?</p>
+						<form id="subscribe">
+							<input type="email" placeholder="Email" required>
+							<button class="btn btn-default btn-lg">Get In Touch</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="features" class="container content-section">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2" region>
+					<h2 class="text-center">What Makes It Different?</h2>
+					<p><strong>An intuitive system to design screens using a row layout.</strong> Arranging widgets on your page
+						is as easy as adding another row to your screen and choosing an arrangement of columns.</p>
+					<p><strong>Not just content management – content <em>control</em>.</strong> Widgets in Stonehenge are tracked
+						by version control, meaning that a complete history of the widget is stored and can be compared against or
+						rolled back at any time.</p>
+					<p><strong>A library of widgets to suit every need.</strong> Whether you need to just enter a paragraph of
+						text, insert a Google Map, or display a searchable directory of your employees.</p>
+					<p><strong>Aims to reduce redundancy of data redundancy.</strong> Stonehenge has a unique and innovative UI
+						that enables and encourages users to repurpose existing widgets instead of creating new ones. This allows
+						users to update content and have it propagate throughout the website, all within the same experience.</p>
+					<p><strong>Growing your platform is how we grow ours.</strong> Your business is our business and your success
+						is our growth. We don’t follow the generic SaaS model – each client’s website has different needs and
+						requirements, and as your needs evolve, we can work with you to build proprietary widgets that adapt to your
+						needs.</p>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<div class="container text-center">
+				<p>Stonehenge © <span id="year">2016</span> <a href="https://codecola.io/" target="_blank">CodeCola</a>.</p>
+			</div>
+		</footer>
+
+		<script src="./build/bundle.js"></script>
+	</body>
+</html>
