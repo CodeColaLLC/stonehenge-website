@@ -2,7 +2,7 @@
 set -e # Exit with nonzero exit code if anything fails
 
 # Some common configuration
-TARGET_BRANCH="gh-pages"
+TARGET_BRANCH="build"
 SOURCE_DIR="./public"
 
 REPO=`git config remote.origin.url`
