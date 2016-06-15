@@ -438,3 +438,7 @@ footer p {
 .content-section p strong {
 	color: #fff;
 }
+
+body > * {
+	visibility: visible;
+}
