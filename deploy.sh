@@ -39,7 +39,7 @@ fi
 # Committing and pushing all changes
 echo "**********************************************Committing and pushing changes made to clone of target branch ${TARGET_BRANCH}"
 git add .
-git commit -m "Deploying build: ${SHA}"
+git commit -m "Automatically deploying build from working directory. Latest commit: ${SHA}"
 git push
 
 # Cleaning up
