@@ -10,26 +10,29 @@ SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
 
 # Clone target branch for this repo
-echo "**********************************************Cloning target branch ${TARGET_BRANCH} into temporary directory"
+echo "------------------------ Cloning target branch ${TARGET_BRANCH} into temporary directory"
 git clone $REPO out
 cd ./out
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
+
+# Delete everything in the branch, including dotfiles, except .git
 rm -rf *
+find . -path ./.git -prune -o -exec rm -rf {} \; 2> /dev/null
 cd ..
 
 # Run the build
-echo "**********************************************Executing build"
+echo "------------------------ Executing build"
 npm run build
 
 # Copy the build contents to the repo
-echo "**********************************************Copying build files from ${SOURCE_DIR} into clone of target branch ${TARGET_BRANCH}"
+echo "------------------------ Copying build files from ${SOURCE_DIR} into clone of target branch ${TARGET_BRANCH}"
 cp -R $SOURCE_DIR/* ./out
 
 cd ./out
 
 # Nothing to do if there are no files changed
 if [[ -z `git diff --exit-code` ]]; then
-	echo "**********************************************No changes for this push. Canceling pages deployment."
+	echo "------------------------ No changes for this push. Canceling pages deployment."
 	# Cleaning up
 	cd ..
 	rm -rf ./out
@@ -37,12 +40,12 @@ if [[ -z `git diff --exit-code` ]]; then
 fi
 
 # Committing and pushing all changes
-echo "**********************************************Committing and pushing changes made to clone of target branch ${TARGET_BRANCH}"
+echo "------------------------ Committing and pushing changes made to clone of target branch ${TARGET_BRANCH}"
 git add .
-git commit -m "Automatically deploying build from working directory. Latest commit: ${SHA}"
+git commit -a -m "Automatically deploying build from working directory. Latest commit: ${SHA}"
 git push origin $TARGET_BRANCH
 
 # Cleaning up
-echo "**********************************************Deleting temporary clone of target branch ${TARGET_BRANCH}"
+echo "------------------------ Deleting temporary clone of target branch ${TARGET_BRANCH}"
 cd ..
 rm -rf ./out
