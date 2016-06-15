@@ -33,7 +33,8 @@ h6 {
 	letter-spacing: 1px;
 }
 
-p {
+p,
+.content-section ul li {
 	margin: 0 0 25px;
 	font-size: 18px;
 	line-height: 1.5;
@@ -278,12 +279,6 @@ a:focus {
 	-o-background-size: cover;
 }
 
-#map {
-	width: 100%;
-	height: 200px;
-	margin-top: 100px;
-}
-
 @media(min-width:767px) {
 	.content-section {
 		padding-top: 250px;
@@ -291,11 +286,6 @@ a:focus {
 
 	.subscribe-section {
 		padding: 100px 0;
-	}
-
-	#map {
-		height: 400px;
-		margin-top: 250px;
 	}
 }
 
@@ -384,13 +374,13 @@ footer p {
 	border: 1px solid #e2e2e2;
 	border-radius: 0;
 	background: rgba(200,200,200,.5);
-	font: normal 24px/36px Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	padding: 4px 8px;
+	font: normal 18px/36px Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	padding: 4px 16px;
 	color: #e2e2e2;
-	text-transform: lowercase;
+	text-transform: uppercase;
 	width: 75%;
 	float: left;
-	border-right: none;
+	border-right-width: 0;
 	outline: none;
 	transition: all .3s ease-in-out;
 }
@@ -415,7 +405,42 @@ footer p {
 	float: right;
 }
 
+@media (max-width: 735px) {
+	#subscribe input {
+		width: 60%;
+	}
+
+	#subscribe button {
+		width: 40%;
+	}
+}
+
+@media (max-width: 500px) {
+	#subscribe input,
+	#subscribe button {
+		width: 100%;
+		float: none;
+	}
+
+	#subscribe button {
+		width: auto;
+		margin-top: 5px;
+	}
+
+	#subscribe input {
+		border-right-width: 1px;
+	}
+}
+
 #logo {
 	width: 100%;
 	max-width: 275px;
+}
+
+.content-section ul li {
+	color: #ddd;
+}
+
+.content-section ul li strong {
+	color: #fff;
 }
