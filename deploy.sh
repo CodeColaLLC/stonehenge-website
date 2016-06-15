@@ -3,7 +3,8 @@ set -e # Exit with nonzero exit code if anything fails
 
 # Some common configuration
 TARGET_BRANCH="build"
-SOURCE_DIR="./public"
+SOURCE_DIRS=("./public" "./api")
+DEST_DIRS=("./" "./api")
 
 REPO=`git config remote.origin.url`
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
@@ -25,14 +26,22 @@ echo "------------------------ Executing build"
 npm run build
 
 # Copy the build contents to the repo
-echo "------------------------ Copying build files from ${SOURCE_DIR} into clone of target branch ${TARGET_BRANCH}"
-cp -R $SOURCE_DIR/* ./out
 cp ./deploy.php ./out
+for i in "${!SOURCE_DIRS[@]}"; do
+	SOURCE_DIR="${SOURCE_DIRS[$i]}"
+	DEST_DIR="${DEST_DIRS[$i]}"
+
+	echo "------------------------ Copying build files from ${SOURCE_DIR} into clone of target branch ${TARGET_BRANCH}"
+	mkdir -p ./out/$DEST_DIR
+	cp -R $SOURCE_DIR/* ./out/$DEST_DIR
+done
 
 cd ./out
 
+git add .
+
 # Nothing to do if there are no files changed
-if [[ -z `git diff --exit-code` ]]; then
+if [[ -z `git diff --cached --exit-code` ]]; then
 	echo "------------------------ No changes for this push. Canceling pages deployment."
 	# Cleaning up
 	cd ..
@@ -42,7 +51,7 @@ fi
 
 # Committing and pushing all changes
 echo "------------------------ Committing and pushing changes made to clone of target branch ${TARGET_BRANCH}"
-git add .
+git status
 git commit -a -m "Automatically deploying build from working directory. Latest commit: ${SHA}"
 git push origin $TARGET_BRANCH
 
