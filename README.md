@@ -9,6 +9,41 @@ Once you have your repository cloned to your local computer, just run the follow
 ```
 npm install
 ```
+
+## Running the API locally
+
+In order to run the API, you will need to have a LAMP stack set up.
+
+1. Using your preferred tool, create or use an existing MySQL database.
+1. Run `./api/db.sql` against the MySQL database to create the table.
+
+Next, you will need to place the project into your Apache web root.
+
+1. Create a directory in your Apache public root that you will use to test the website, e.g. `htdocs/stonehenge`.
+1. Create a file in this directory called `.mysqlconfig.json`. Configure your database connection using the following template:
+  ```json
+  {
+    "host": "localhost",
+    "username": "root",
+    "password": "",
+    "database": "leads"
+  }
+  ```
+
+1. Copy `./api` to a directory in your Apache htdocs so that PHP can execute it.
+1. Run [`npm run build`](#npm-run-build) to create a build.
+1. Copy the contents of `./public` into the same directory that has `./api`.
+
+Example structure:
+  ```
+  htdocs/stonehenge/.mysqlconfig.json
+  htdocs/stonehenge/api/capture-lead.php
+  htdocs/stonehenge/index.html
+  htdocs/stonehenge/build/...
+  ```
+
+Now you should be able to run the website with Apache. Try visiting http://localhost/stonehenge in your browser.
+
 ## Scripts
 
 This package ships with a few handy scripts to automate development and deployment of the website.
