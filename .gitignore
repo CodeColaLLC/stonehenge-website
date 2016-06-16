@@ -1,9 +1,0 @@
-node_modules
-.npm
-.idea
-.tmp
-*#
-*~
-.DS_Store
-build
-npm-debug.log
