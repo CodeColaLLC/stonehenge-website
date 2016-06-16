@@ -368,6 +368,10 @@ footer p {
 	color: #d4d4d4;
 }
 
+.subscribe-section {
+	height: 400px;
+}
+
 #subscribe input {
 	border: 1px solid #e2e2e2;
 	border-radius: 0;
