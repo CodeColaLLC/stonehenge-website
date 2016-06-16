@@ -32,7 +32,7 @@ if ($db->connect_error) {
 }
 
 $stmt = $db->stmt_init();
-if (!$db->prepare('INSERT INTO `leads` (`service`, `email`, `ip`, `timestamp`) VALUES (?, ?, ?, ?);')) {
+if (!$stmt->prepare('INSERT INTO `leads` (`service`, `email`, `ip`, `timestamp`) VALUES (?, ?, ?, ?);')) {
 	header('HTTP/1.1 500 Internal Server Error');
 	die(json_encode(['error' => 'Unable to prepare query. ' . print_r($stmt->error_list, true)]));
 }
