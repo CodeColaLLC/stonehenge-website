@@ -92,3 +92,4 @@ function send_email ($input, $error = null) {
 		'From: ' . $input->repository->owner->email . ($config->cc ? "\n" . 'Cc: ' . $config->cc : '')
 	);
 }
+
