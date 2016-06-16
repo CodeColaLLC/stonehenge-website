@@ -23,7 +23,7 @@ if (!filter_var($body->email, FILTER_VALIDATE_EMAIL)) {
 	die(json_encode(['error' => '`email` property on request must be a valid RFC 822 email address.']));
 }
 
-$config = json_decode(file_get_contents(__DIR__ . '/../mysqlconfig.json'));
+$config = json_decode(file_get_contents(__DIR__ . '/../.mysqlconfig.json'));
 $db = new Mysqli($config->host, $config->username, $config->password, $config->database);
 
 if ($db->connect_error) {
