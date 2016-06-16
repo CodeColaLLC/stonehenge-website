@@ -372,6 +372,11 @@ footer p {
 	height: 400px;
 }
 
+.subscribe-section .alert {
+	position: absolute;
+	top: 0;
+}
+
 #subscribe input {
 	border: 1px solid #e2e2e2;
 	border-radius: 0;

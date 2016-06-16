@@ -20,7 +20,7 @@ if (!property_exists($body, 'email') || gettype($body->email) !== 'string') {
 
 if (!filter_var($body->email, FILTER_VALIDATE_EMAIL)) {
 	header('HTTP/1.1 400 Bad Request');
-	die(json_encode(['error' => '`email` property on request must be a valid RFC 822 email address.']));
+	die(json_encode(['error' => 'Please enter a valid RFC 822 email address.']));
 }
 
 $config = json_decode(file_get_contents(__DIR__ . '/../.mysqlconfig.json'));
