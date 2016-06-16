@@ -9,6 +9,10 @@ module.exports = [
 		loader: 'style-loader!css-loader'
 	},
 	{
+		test: /redactor.*\.js/,
+		loader: 'imports?jQuery=jquery,$=jquery,CodeMirror=codemirror,this=>window'
+	},
+	{
 		test: /(bootstrap|jquery\.).*\.js/,
 		loader: 'imports?jQuery=jquery,$=jquery,this=>window'
 	},
